@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "mosh-project-9515b"
+  },
+  "targets": {
+    "mosh-project-9515b": {
+      "hosting": {
+        "mosh-project": [
+          "mosh-project-9515b"
+        ]
+      }
+    }
+  }
+}

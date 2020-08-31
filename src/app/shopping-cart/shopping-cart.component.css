@@ -1,0 +1,18 @@
+.img-header {
+    width: 8rem;
+}
+
+.quantity-header {
+    width: 10rem;
+}
+
+.price-header {
+    width: 10rem;
+}
+
+.thumbnail {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    background-size: cover;
+}

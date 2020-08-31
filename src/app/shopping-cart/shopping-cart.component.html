@@ -1,0 +1,45 @@
+<h1>Shopping Cart</h1>
+<div class="row col-10" *ngIf="cart">
+    <p>
+        You have {{ cart.totalItemsCount }} items in your shopping cart. 
+        <button *ngIf="cart.totalItemsCount" mat-button color="warn" (click)="clearCart()">
+            Clear Shopping Cart
+        </button>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="img-header"></th>
+                <th>Product</th>
+                <th class="text-center quantity-header">Quantity</th>
+                <th class="text-right price-header">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cart.items | keyvalue">
+                <ng-container *ngIf="getProduct(item.key) as product">
+                    <td>
+                        <div [style.backgroundImage]="'url(' + product.imageUrl + ')'" class="thumbnail"></div>
+                    </td>
+                    <td>{{ product.title }}</td>
+                    <td>
+                        <product-quantity [product]="product" [shopping-cart]="cart"></product-quantity>
+                    </td>
+                    <td class="text-right">{{ getPrice(product, item.value) | currency:'USD':'symbol' }}</td>
+                </ng-container>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th class="text-right"> 
+                    {{ getTotalPrice() | currency:'USD':'symbol' }} 
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+    <button *ngIf="cart.totalItemsCount" mat-raised-button color="primary" routerLink="/check-out">Check Out</button>
+</div>

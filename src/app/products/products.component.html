@@ -1,0 +1,25 @@
+
+<div class="full-page-container">
+
+    <!-- Product filter -->
+    <div class="categories-container">
+        <mat-selection-list [multiple]="false" [(ngModel)]="selectedCategory" (ngModelChange)="onChange()">
+            <mat-list-option value="all">
+                All Categories
+            </mat-list-option>
+            <mat-list-option *ngFor="let c of categories$ | async" [value]="c.key">
+               {{c.value.name}}
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+
+    <!-- Product cards -->
+    <div class="products-container" *ngIf="cart$ | async as cart">
+        <ng-container *ngFor="let p of products$ | async">
+            <div *ngIf="isInCategory(p.category)" class="product-card">
+                <product-card [product]="p" [shopping-cart]="cart"></product-card>
+            </div>
+        </ng-container>
+    </div>
+    
+</div>

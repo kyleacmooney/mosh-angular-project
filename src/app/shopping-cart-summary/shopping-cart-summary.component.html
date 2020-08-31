@@ -1,0 +1,22 @@
+<mat-card *ngIf="cart">
+    <mat-card-header>
+        <mat-card-title>Order Summary</mat-card-title>
+        <mat-card-subtitle>You have {{ cart.totalItemsCount }} items in your shopping cart</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let item of cart.items | keyvalue" class="list-group-item">
+                <ng-container *ngIf="getProduct(item.key) as product">
+                    {{ item.value.quantity }} × {{ product.title }}
+                    <div class="float-right"> {{ getPrice(product, item.value) | currency:'USD':'symbol' }} </div>
+                </ng-container>
+            </li>
+            <li class="list-group-item font-weight-bold">
+                Total
+                <div class="float-right">
+                    {{ getTotalPrice() | currency:'USD':'symbol' }}
+                </div>
+            </li>
+        </ul>
+    </mat-card-content>
+</mat-card>

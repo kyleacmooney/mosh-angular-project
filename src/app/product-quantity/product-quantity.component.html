@@ -1,0 +1,13 @@
+<div *ngIf="shoppingCart" id="shopping-cart-icons">
+    <span id="remove-icon">
+        <button (click)="removeFromCart()" mat-icon-button aria-label="Remove from shopping cart icon">
+            <mat-icon>remove_shopping_cart</mat-icon>
+        </button>
+    </span>
+    <span id="quantity">{{ shoppingCart.getQuantity(product) }}</span>
+    <span id="add-icon">
+        <button (click)="addToCart()" mat-icon-button aria-label="Add to shopping cart icon">
+            <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+    </span>
+</div>

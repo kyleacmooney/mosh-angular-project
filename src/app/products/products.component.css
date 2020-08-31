@@ -1,0 +1,21 @@
+.full-page-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.categories-container {
+    flex: 1;
+}
+
+.products-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 5;
+}
+
+.product-card {
+    margin: 1rem;
+    flex-basis: 27%;
+}
