@@ -2,6 +2,7 @@
   "name": "mosh-project",
   "version": "0.0.0",
   "scripts": {
+    "deploy:firebase": "ng build --prod && firebase deploy",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -12,15 +13,27 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.0.9",
+    "@angular/cdk": "^10.1.3",
     "@angular/common": "~10.0.9",
     "@angular/compiler": "~10.0.9",
     "@angular/core": "~10.0.9",
+    "@angular/flex-layout": "^10.0.0-beta.32",
     "@angular/forms": "~10.0.9",
+    "@angular/localize": "~10.0.9",
+    "@angular/material": "^10.1.3",
     "@angular/platform-browser": "~10.0.9",
     "@angular/platform-browser-dynamic": "~10.0.9",
     "@angular/router": "~10.0.9",
+    "@ng-bootstrap/ng-bootstrap": "^7.0.0",
+    "angularfire2": "^5.4.2",
+    "bootstrap": "^4.5.2",
+    "firebase": "^7.19.0",
+    "hammerjs": "^2.0.8",
+    "ngx-custom-validators": "^8.0.0",
+    "ngx-webstorage-service": "^4.1.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
+    "valid-url": "^1.0.9",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
@@ -41,6 +54,11 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.9.5"
+    "typescript": "~3.9.5",
+    "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",
+    "firebase-tools": "^7.12.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1"
   }
 }
