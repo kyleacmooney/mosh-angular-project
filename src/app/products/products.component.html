@@ -17,7 +17,7 @@
     <div class="products-container" *ngIf="cart$ | async as cart">
         <ng-container *ngFor="let p of products$ | async">
             <div *ngIf="isInCategory(p.category)" class="product-card">
-                <product-card [product]="p" [shopping-cart]="cart"></product-card>
+                <product-box [product]="p" [shopping-cart]="cart"></product-box>
             </div>
         </ng-container>
     </div>

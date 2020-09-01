@@ -53,6 +53,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { OrderService } from './shared/services/order.service';
 import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
+import { ProductBoxComponent } from './shared/components/product-box/product-box.component';
 
 const angularMaterialModules = [
   MatToolbarModule,
@@ -90,7 +91,8 @@ const angularMaterialModules = [
     ShoppingCartComponent,
     ProductQuantityComponent,
     ShippingFormComponent,
-    ShoppingCartSummaryComponent
+    ShoppingCartSummaryComponent,
+    ProductBoxComponent
   ],
   imports: [
     BrowserModule,
