@@ -28,10 +28,7 @@ import { environment } from './../environments/environment';
 import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ShoppingModule } from './shopping/shopping.module';
 
@@ -55,32 +52,20 @@ const angularMaterialModules = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    NavbarComponent,
-    NotFoundComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AdminModule,
     SharedModule,
     ShoppingModule,
+    CoreModule,
     HammerModule,
     FormsModule,
     CustomFormsModule,
     AppRoutingModule,
     NgbModule,
-    RouterModule.forRoot([
-      {
-        path: 'login',
-        component: LoginComponent
-      },
-      {
-        path: '**',
-        component: NotFoundComponent
-      }
-    ]),
+    RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
