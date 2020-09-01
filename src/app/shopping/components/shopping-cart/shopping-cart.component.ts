@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ShoppingCartService } from '../shared/services/shopping-cart.service';
-import { ShoppingCart } from '../shared/models/shopping-cart';
+import { ShoppingCartService } from '../../../shared/services/shopping-cart.service';
+import { ShoppingCart } from '../../../shared/models/shopping-cart';
 import {  Subscription } from 'rxjs';
-import { ProductService } from '../shared/services/product.service';
-import { Product } from '../shared/models/product';
-import { ShoppingCartItem } from '../shared/models/shopping-cart';
+import { ProductService } from '../../../shared/services/product.service';
+import { Product } from '../../../shared/models/product';
+import { ShoppingCartItem } from '../../../shared/models/shopping-cart';
 
 @Component({
   selector: 'shopping-cart',

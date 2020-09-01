@@ -12,4 +12,7 @@ export class OrderSuccessComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // TODO: Implement some checking to ensure there is an id parameter, that it is valid, and that
+  // it corresponds to this user's id (that it is was an order made by this user).
+
 }

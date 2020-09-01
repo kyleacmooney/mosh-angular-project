@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ShoppingCartService } from '../shared/services/shopping-cart.service';
+import { ShoppingCartService } from '../../../shared/services/shopping-cart.service';
 import { Subscription } from 'rxjs';
-import { ShoppingCart, ShoppingCartItem } from '../shared/models/shopping-cart';
-import { Product } from '../shared/models/product';
-import { ProductService } from '../shared/services/product.service';
+import { ShoppingCart, ShoppingCartItem } from '../../../shared/models/shopping-cart';
+import { Product } from '../../../shared/models/product';
+import { ProductService } from '../../../shared/services/product.service';
 
 @Component({
   selector: 'shopping-cart-summary',

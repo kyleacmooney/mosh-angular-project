@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Order } from '../shared/models/order';
-import { OrderService } from '../shared/services/order.service';
-import { AuthService } from '../shared/services/auth.service';
+import { Order } from '../../../shared/models/order';
+import { OrderService } from '../../../shared/services/order.service';
+import { AuthService } from '../../../shared/services/auth.service';
 import { switchMap } from 'rxjs/operators';
 
 // TODO: Merge this and admin-orders
