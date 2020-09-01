@@ -25,9 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomFormsModule } from 'ngx-custom-validators';
 
 import { environment } from './../environments/environment';
-import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
-import { AdmOrdersComponent } from './admin/components/adm-orders/adm-orders.component';
-import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CheckOutComponent } from './check-out/check-out.component';
@@ -37,9 +35,7 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
-import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { ProductsComponent } from './products/products.component';
-import { AdminAuthGuard } from './shared/services/admin-auth-guard.service';
 import { AuthGuard } from './shared/services/auth-guard.service';
 import { SharedModule } from './shared/shared.module';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
@@ -74,17 +70,14 @@ const angularMaterialModules = [
     CheckOutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    AdminProductsComponent,
     LoginComponent,
-    ProductFormComponent,
     ShoppingCartComponent,
-    ProductQuantityComponent,
     ShippingFormComponent,
-    ShoppingCartSummaryComponent,
-    AdmOrdersComponent
+    ShoppingCartSummaryComponent
   ],
   imports: [
     BrowserModule,
+    AdminModule,
     SharedModule,
     HammerModule,
     FormsModule,
@@ -122,28 +115,6 @@ const angularMaterialModules = [
         component: MyOrdersComponent,
         canActivate: [AuthGuard]
       },
-
-      // Accessible to admin users:
-      {
-        path: 'admin/products/new',
-        component: ProductFormComponent,
-        canActivate: [AuthGuard, AdminAuthGuard]
-      },
-      {
-        path: 'admin/products/:id',
-        component: ProductFormComponent,
-        canActivate: [AuthGuard, AdminAuthGuard]
-      },
-      {
-        path: 'admin/products',
-        component: AdminProductsComponent,
-        canActivate: [AuthGuard, AdminAuthGuard]
-      },
-      {
-        path: 'admin/orders',
-        component: AdmOrdersComponent,
-        canActivate: [AuthGuard, AdminAuthGuard]
-      },
       {
         path: '**',
         component: NotFoundComponent
@@ -155,8 +126,8 @@ const angularMaterialModules = [
     BrowserAnimationsModule,
     ...angularMaterialModules
   ],
-  providers: [
-    AdminAuthGuard
+  providers: [],
+  exports: [
   ],
   bootstrap: [AppComponent]
 })

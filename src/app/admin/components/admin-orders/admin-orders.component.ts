@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
 // TODO: Merge this and my-orders
 
 @Component({
-  selector: 'adm-orders',
-  templateUrl: './adm-orders.component.html',
-  styleUrls: ['./adm-orders.component.css']
+  selector: 'admin-orders',
+  templateUrl: './admin-orders.component.html',
+  styleUrls: ['./admin-orders.component.css']
 })
-export class AdmOrdersComponent implements OnInit {
+export class AdminOrdersComponent implements OnInit {
 
   orders$: Observable<Order[]>;
 
