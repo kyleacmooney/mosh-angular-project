@@ -37,7 +37,6 @@ import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
-import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthService } from './shared/services/auth.service';
@@ -53,6 +52,7 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { OrderService } from './shared/services/order.service';
 import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
 import { ProductBoxComponent } from './shared/components/product-box/product-box.component';
+import { AdmOrdersComponent } from './admin/components/adm-orders/adm-orders.component';
 
 const angularMaterialModules = [
   MatToolbarModule,
@@ -83,14 +83,14 @@ const angularMaterialModules = [
     OrderSuccessComponent,
     MyOrdersComponent,
     AdminProductsComponent,
-    AdminOrdersComponent,
     LoginComponent,
     ProductFormComponent,
     ShoppingCartComponent,
     ProductQuantityComponent,
     ShippingFormComponent,
     ShoppingCartSummaryComponent,
-    ProductBoxComponent
+    ProductBoxComponent,
+    AdmOrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -149,7 +149,7 @@ const angularMaterialModules = [
       },
       {
         path: 'admin/orders',
-        component: AdminOrdersComponent,
+        component: AdmOrdersComponent,
         canActivate: [AuthGuard, AdminAuthGuard]
       },
       {
