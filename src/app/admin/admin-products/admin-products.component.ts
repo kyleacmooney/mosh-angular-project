@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { ProductService } from './../../services/product.service';
+import { ProductService } from '../../shared/services/product.service';
 import { Product } from 'src/app/models/product';
 import { Subscription } from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';

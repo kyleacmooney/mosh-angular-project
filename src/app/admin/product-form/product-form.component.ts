@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryService } from './../../services/category.service';
-import { ProductService } from './../../services/product.service';
+import { CategoryService } from '../../shared/services/category.service';
+import { ProductService } from '../../shared/services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
-import { Product, emptyProduct } from '../../models/product';
+import { Product, emptyProduct } from '../../shared/models/product';
 import { NgForm } from '@angular/forms';
 import { isWebUri } from 'valid-url';
 

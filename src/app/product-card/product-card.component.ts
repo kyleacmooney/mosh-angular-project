@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '../models/product';
+import { Product } from '../shared/models/product';
 import { isWebUri } from 'valid-url';
-import { ShoppingCartService } from './../services/shopping-cart.service';
-import { ShoppingCart } from '../models/shopping-cart';
+import { ShoppingCartService } from '../shared/services/shopping-cart.service';
+import { ShoppingCart } from '../shared/models/shopping-cart';
 
 @Component({
   selector: 'product-card',
