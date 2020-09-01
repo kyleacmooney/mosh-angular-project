@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../shared/services/order.service';
-import { Order } from 'src/app/models/order';
+import { Order } from '../../shared/models/order';
 import { Observable } from 'rxjs';
 
 // TODO: Merge this and my-orders
