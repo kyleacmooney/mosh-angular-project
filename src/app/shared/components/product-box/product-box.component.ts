@@ -23,7 +23,6 @@ export class ProductBoxComponent {
 
   addToCart(): void {
     this.cartService.addToCart(this.product);
-    console.log('in product box');
   }
 
 }

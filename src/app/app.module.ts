@@ -47,7 +47,6 @@ import { AdminAuthGuard } from './shared/services/admin-auth-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { CategoryService } from './shared/services/category.service';
 import { ProductService } from './shared/services/product.service';
-import { ProductCardComponent } from './product-card/product-card.component';
 import { ShoppingCartService } from './shared/services/shopping-cart.service';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
@@ -87,7 +86,6 @@ const angularMaterialModules = [
     AdminOrdersComponent,
     LoginComponent,
     ProductFormComponent,
-    ProductCardComponent,
     ShoppingCartComponent,
     ProductQuantityComponent,
     ShippingFormComponent,
