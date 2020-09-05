@@ -1,18 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { SharedModule } from './../shared/shared.module';
 
-import { AdminAuthGuard } from './services/admin-auth-guard.service';
 import { AuthGuard } from '../shared/services/auth-guard.service';
+import { SharedModule } from './../shared/shared.module';
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './components/admin-products/admin-products.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
-import { MatButtonModule } from '@angular/material/button';
+import { AdminAuthGuard } from './services/admin-auth-guard.service';
 
 
 @NgModule({
@@ -22,8 +16,6 @@ import { MatButtonModule } from '@angular/material/button';
     ProductFormComponent
   ],
   imports: [
-    CommonModule,
-    FormsModule,
     SharedModule,
     RouterModule.forChild([
       {
@@ -46,11 +38,7 @@ import { MatButtonModule } from '@angular/material/button';
         component: ProductFormComponent,
         canActivate: [AuthGuard, AdminAuthGuard]
       },
-    ]),
-    MatSortModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatButtonModule
+    ])
   ],
   providers: [
     AdminAuthGuard

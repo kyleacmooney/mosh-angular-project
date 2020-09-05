@@ -1,10 +1,4 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
-import { MatSelectModule } from '@angular/material/select';
 import { RouterModule } from '@angular/router';
 
 import { AuthGuard } from '../shared/services/auth-guard.service';
@@ -29,8 +23,6 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     OrderSuccessComponent
   ],
   imports: [
-    CommonModule,
-    FormsModule,
     SharedModule,
     RouterModule.forChild([
       {
@@ -56,11 +48,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
         path: 'shopping-cart',
         component: ShoppingCartComponent
       },
-    ]),
-    MatButtonModule,
-    MatCardModule,
-    MatListModule,
-    MatSelectModule
+    ])
   ]
 })
 export class ShoppingModule { }

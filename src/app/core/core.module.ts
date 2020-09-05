@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
+import { SharedModule } from './../shared/shared.module';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
-import { MatBadgeModule } from '@angular/material/badge';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +16,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     NotFoundComponent
   ],
   imports: [
-    CommonModule,
+    SharedModule,
     RouterModule.forChild([
       {
         path: 'login',
@@ -31,12 +26,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
         path: '**',
         component: NotFoundComponent
       }
-    ]),
-    MatBadgeModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatToolbarModule
+    ])
   ],
   exports: [
     NavbarComponent

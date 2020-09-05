@@ -1,49 +1,33 @@
 <mat-toolbar>
 
-  <button routerLink="/" mat-icon-button aria-label="Home icon">
-    <mat-icon>home</mat-icon>
-  </button>
-
-  <button *ngIf="cart$ | async as cart"
-    [matBadgeHidden]="!cart.totalItemsCount" 
-    [matBadge]="cart.totalItemsCount"
-    matBadgePosition="after" 
-    matBadgeColor="accent" 
-    routerLink="/shopping-cart" 
-    mat-button>
-    Shopping Cart
-  </button>
-
-  <ng-template #anonymousUser>
-    <button routerLink="/login" mat-button>
-      Login
+    <button routerLink="/" mat-icon-button aria-label="Home icon">
+      <mat-icon>home</mat-icon>
     </button>
-  </ng-template>
-  <div *ngIf="appUser; else anonymousUser">
-    <div>
+
+    <button *ngIf="cart$ | async as cart" [matBadgeHidden]="!cart.totalItemsCount" [matBadge]="cart.totalItemsCount"
+      matBadgePosition="after" matBadgeColor="accent" routerLink="/shopping-cart" mat-button>
+      Shopping Cart
+    </button>
+
+    <ng-template #anonymousUser>
+      <button routerLink="/login" mat-button>
+        Login
+      </button>
+    </ng-template>
+    <ng-container *ngIf="appUser; else anonymousUser">
       <button mat-button [matMenuTriggerFor]="usernameMenu">
         {{ appUser.name }}
         <mat-icon>arrow_drop_down</mat-icon>
       </button>
-    </div>
-    <mat-menu #usernameMenu="matMenu" yPosition="below">
-      <button routerLink="/my/orders" mat-menu-item>My Orders</button>
-      <ng-container *ngIf="appUser.isAdmin">
-        <button routerLink="/admin/orders" mat-menu-item>Manage Orders</button>
-        <button routerLink="/admin/products" mat-menu-item>Manage Products</button>
-      </ng-container>
-      <button (click)="logout()" mat-menu-item>Log Out</button>
-    </mat-menu>
-  </div>
+      <mat-menu #usernameMenu="matMenu" yPosition="below">
+        <button routerLink="/my/orders" mat-menu-item>My Orders</button>
+        <ng-container *ngIf="appUser.isAdmin">
+          <button routerLink="/admin/orders" mat-menu-item>Manage Orders</button>
+          <button routerLink="/admin/products" mat-menu-item>Manage Products</button>
+        </ng-container>
+        <button (click)="logout()" mat-menu-item>Log Out</button>
+      </mat-menu>
+    </ng-container>
 
-  <span class="example-flex"></span>
-
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
 
 </mat-toolbar>
